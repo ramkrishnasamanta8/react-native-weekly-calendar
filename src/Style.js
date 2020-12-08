@@ -1,13 +1,13 @@
 import { StyleSheet, Dimensions } from 'react-native';
-
+import { responsiveFontSize, responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 const styles = StyleSheet.create({
     component: {
         width: Dimensions.get('window').width,
         alignItems: 'center',
         backgroundColor: 'white',
-        borderColor: 'grey',
-        borderTopWidth: StyleSheet.hairlineWidth,
-        borderBottomWidth: StyleSheet.hairlineWidth
+        // borderColor: 'grey',
+        // borderTopWidth: StyleSheet.hairlineWidth,
+        // borderBottomWidth: StyleSheet.hairlineWidth
     },
     header: {
         width: '100%',
@@ -40,13 +40,30 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     weekdayLabelText: {
-        color: 'grey'
-    }, 
+        color: 'grey',
+        fontSize:responsiveFontSize(1.6)
+    },
+    selectedHeader: {
+        color: '#FFF',
+        height:responsiveFontSize(4.5),
+        width:responsiveFontSize(4.5),
+        textAlign:'center',
+        borderRadius: responsiveFontSize(3),
+        backgroundColor: '#772385',
+        fontSize:responsiveFontSize(1.6),
+        paddingTop:responsiveFontSize(1.2)
+    },
+    selecteView:{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent:'center',
+        backgroundColor:'red'
+    },
     weekdayNumberContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 5
+        fontSize: 10,
     },
     weekDayNumber: {
         flex: 1,
@@ -60,9 +77,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         width: 30,
         height: 30,
-        borderRadius: 30/2,
+        borderRadius: 30 / 2,
     },
-    weekDayNumberTextToday : {
+    weekDayNumberTextToday: {
         color: 'white'
     },
     schedule: {
@@ -118,7 +135,7 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     dayText: {
-        
+
     },
     allEvents: {
         width: '80%',
@@ -144,7 +161,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'grey',
         marginRight: 5,
         alignSelf: 'center',
-        borderRadius: 4/2,
+        borderRadius: 4 / 2,
     },
     durationDotConnector: {
         height: 20,
@@ -169,7 +186,7 @@ const styles = StyleSheet.create({
         height: 4,
         marginTop: 1,
         alignSelf: 'center',
-        borderRadius: 4/2,
+        borderRadius: 4 / 2,
         position: 'absolute',
         bottom: '10%'
     }
