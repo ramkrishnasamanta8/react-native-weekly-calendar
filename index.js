@@ -201,26 +201,47 @@ const WeeklyCalendar = props => {
             <View style={styles.week}>
                 <View style={styles.weekdayLabelContainer}>
                     <View style={styles.weekdayLabel}>
+                        <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[0]) ? '#772385':'#FFF',height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
                         <Text style={isCalendarReady && isSelectedDate(weekdays[0]) ?styles.selectedHeader: [styles.weekdayLabelText, props.dayLabelStyle]}>{weekdays.length > 0 ? weekdayLabels[0].substr(0,1) : ''}</Text>
+                        </View>
+                        
                     </View>
                     <View style={styles.weekdayLabel}>
+                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[1]) ? '#772385':'#FFF',height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
                         <Text style={isCalendarReady && isSelectedDate(weekdays[1]) ?styles.selectedHeader:[styles.weekdayLabelText, props.dayLabelStyle]}>{weekdays.length > 0 ? weekdayLabels[1].substr(0,1) : ''}</Text>
                     </View>
+                    </View>
+                    
                     <View style={styles.weekdayLabel}>
+                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[2]) ? '#772385':'#FFF',height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
                         <Text style={isCalendarReady && isSelectedDate(weekdays[2]) ?styles.selectedHeader:[styles.weekdayLabelText, props.dayLabelStyle]}>{weekdays.length > 0 ? weekdayLabels[2].substr(0,1) : ''}</Text>
                     </View>
+                    </View>
+                    
                     <View style={styles.weekdayLabel}>
+                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[3]) ? '#772385':'#FFF',height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
                         <Text style={isCalendarReady && isSelectedDate(weekdays[3]) ?styles.selectedHeader:[styles.weekdayLabelText, props.dayLabelStyle]}>{weekdays.length > 0 ? weekdayLabels[3].substr(0,1) : ''}</Text>
                     </View>
+                    </View>
+                    
                     <View style={styles.weekdayLabel}>
+                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[4]) ? '#772385':'#FFF',height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
                         <Text style={isCalendarReady && isSelectedDate(weekdays[4]) ?styles.selectedHeader:[styles.weekdayLabelText, props.dayLabelStyle]}>{weekdays.length > 0 ? weekdayLabels[4].substr(0,1) : ''}</Text>
                     </View>
+                    </View>
+                    
                     <View style={styles.weekdayLabel}>
+                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[5]) ? '#772385':'#FFF',height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
                         <Text style={isCalendarReady && isSelectedDate(weekdays[5]) ?styles.selectedHeader:[styles.weekdayLabelText, props.dayLabelStyle]}>{weekdays.length > 0 ? weekdayLabels[5].substr(0,1) : ''}</Text>
                     </View>
+                    </View>
+                    
                     <View style={styles.weekdayLabel}>
+                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[6]) ? '#772385':'#FFF',height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
                         <Text style={isCalendarReady && isSelectedDate(weekdays[6]) ?styles.selectedHeader:[styles.weekdayLabelText, props.dayLabelStyle]}>{weekdays.length > 0 ? weekdayLabels[6].substr(0,1) : ''}</Text>
                     </View>
+                    </View>
+                    
                 </View>
                 <View style={styles.weekdayNumberContainer}>
                     <TouchableOpacity style={styles.weekDayNumber} onPress={onDayPress.bind(this, weekdays[0], 0)}>
