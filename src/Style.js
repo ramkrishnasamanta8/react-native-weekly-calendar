@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
     },
     weekdayLabel: {
         flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent:'center'
     },
     weekdayLabelText: {
         color: 'grey',
@@ -45,13 +46,13 @@ const styles = StyleSheet.create({
     },
     selectedHeader: {
         color: '#FFF',
-        height:responsiveFontSize(4.5),
-        width:responsiveFontSize(4.5),
+        // height:responsiveFontSize(4.5),
+        // width:responsiveFontSize(4.5),
         textAlign:'center',
-        borderRadius: responsiveFontSize(3),
-        backgroundColor: '#772385',
+        //borderRadius: responsiveFontSize(3),
+        //backgroundColor: '#772385',
         fontSize:responsiveFontSize(1.6),
-        paddingTop:responsiveFontSize(1.2)
+        //paddingTop:responsiveFontSize(1.2)
     },
     selecteView:{
         flex: 1,
@@ -64,6 +65,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         fontSize: 10,
+        marginTop:-10
     },
     weekDayNumber: {
         flex: 1,
