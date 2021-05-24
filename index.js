@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Text, View, ScrollView, TouchableOpacity, TouchableWithoutFeedback, Modal, Platform, ActivityIndicator } from 'react-native';
+import { Text, View, ScrollView, TouchableOpacity, TouchableWithoutFeedback, Modal, Platform, ActivityIndicator, ColorPropType } from 'react-native';
 import PropTypes from 'prop-types';
 import moment from 'moment/min/moment-with-locales';
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -200,110 +200,109 @@ const WeeklyCalendar = props => {
             </View> */}
             <View style={styles.week}>
                 <View style={styles.weekdayLabelContainer}>
-                    <View style={styles.weekdayLabel}>
-                        <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[0]) ? '#772385':'#FFF',height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
+                    <TouchableOpacity style={styles.weekdayLabel} onPress={onDayPress.bind(this, weekdays[0], 0)}>
+                        <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[0]) ? '#FFF':props.themeColor,height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
                         <Text style={isCalendarReady && isSelectedDate(weekdays[0]) ?styles.selectedHeader: [styles.weekdayLabelText, props.dayLabelStyle]}>{weekdays.length > 0 ? weekdayLabels[0].substr(0,1) : ''}</Text>
                         </View>
-                        
-                    </View>
-                    <View style={styles.weekdayLabel}>
-                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[1]) ? '#772385':'#FFF',height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.weekdayLabel} onPress={onDayPress.bind(this, weekdays[1], 1)}>
+                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[1]) ? '#FFF':props.themeColor,height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
                         <Text style={isCalendarReady && isSelectedDate(weekdays[1]) ?styles.selectedHeader:[styles.weekdayLabelText, props.dayLabelStyle]}>{weekdays.length > 0 ? weekdayLabels[1].substr(0,1) : ''}</Text>
                     </View>
-                    </View>
+                    </TouchableOpacity>
                     
-                    <View style={styles.weekdayLabel}>
-                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[2]) ? '#772385':'#FFF',height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
+                    <TouchableOpacity style={styles.weekdayLabel} onPress={onDayPress.bind(this, weekdays[2], 2)}>
+                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[2]) ? '#FFF':props.themeColor,height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
                         <Text style={isCalendarReady && isSelectedDate(weekdays[2]) ?styles.selectedHeader:[styles.weekdayLabelText, props.dayLabelStyle]}>{weekdays.length > 0 ? weekdayLabels[2].substr(0,1) : ''}</Text>
                     </View>
-                    </View>
+                    </TouchableOpacity>
                     
-                    <View style={styles.weekdayLabel}>
-                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[3]) ? '#772385':'#FFF',height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
+                    <TouchableOpacity style={styles.weekdayLabel} onPress={onDayPress.bind(this, weekdays[3], 3)}>
+                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[3]) ? '#FFF':props.themeColor,height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
                         <Text style={isCalendarReady && isSelectedDate(weekdays[3]) ?styles.selectedHeader:[styles.weekdayLabelText, props.dayLabelStyle]}>{weekdays.length > 0 ? weekdayLabels[3].substr(0,1) : ''}</Text>
                     </View>
-                    </View>
+                    </TouchableOpacity>
                     
-                    <View style={styles.weekdayLabel}>
-                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[4]) ? '#772385':'#FFF',height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
+                    <TouchableOpacity style={styles.weekdayLabel} onPress={onDayPress.bind(this, weekdays[4], 4)}>
+                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[4]) ? '#FFF':props.themeColor,height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
                         <Text style={isCalendarReady && isSelectedDate(weekdays[4]) ?styles.selectedHeader:[styles.weekdayLabelText, props.dayLabelStyle]}>{weekdays.length > 0 ? weekdayLabels[4].substr(0,1) : ''}</Text>
                     </View>
-                    </View>
+                    </TouchableOpacity>
                     
-                    <View style={styles.weekdayLabel}>
-                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[5]) ? '#772385':'#FFF',height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
+                    <TouchableOpacity style={styles.weekdayLabel} onPress={onDayPress.bind(this, weekdays[5], 5)}>
+                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[5]) ? '#FFF':props.themeColor,height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
                         <Text style={isCalendarReady && isSelectedDate(weekdays[5]) ?styles.selectedHeader:[styles.weekdayLabelText, props.dayLabelStyle]}>{weekdays.length > 0 ? weekdayLabels[5].substr(0,1) : ''}</Text>
                     </View>
-                    </View>
+                    </TouchableOpacity>
                     
-                    <View style={styles.weekdayLabel}>
-                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[6]) ? '#772385':'#FFF',height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
+                    <TouchableOpacity style={styles.weekdayLabel} onPress={onDayPress.bind(this, weekdays[6], 6)}>
+                    <View style={{backgroundColor:isCalendarReady && isSelectedDate(weekdays[6]) ? '#FFF':props.themeColor,height:responsiveFontSize(4.5),width:responsiveFontSize(4.5),borderRadius:responsiveFontSize(3),justifyContent:'center',alignItems:'center'}}>
                         <Text style={isCalendarReady && isSelectedDate(weekdays[6]) ?styles.selectedHeader:[styles.weekdayLabelText, props.dayLabelStyle]}>{weekdays.length > 0 ? weekdayLabels[6].substr(0,1) : ''}</Text>
                     </View>
-                    </View>
+                    </TouchableOpacity>
                     
                 </View>
                 <View style={styles.weekdayNumberContainer}>
                     <TouchableOpacity style={styles.weekDayNumber} onPress={onDayPress.bind(this, weekdays[0], 0)}>
                         <View>
-                            <Text style={{ color: "#3B3E51" ,fontSize:responsiveFontSize(1.9),fontWeight:isCalendarReady && isSelectedDate(weekdays[0]) ?'bold':'normal' }}>
+                            <Text style={{ color: "#FFF" ,fontSize:responsiveFontSize(1.9),fontWeight:isCalendarReady && isSelectedDate(weekdays[0]) ?'bold':'normal' }}>
                                 {isCalendarReady && isSelectedDate(weekdays[0]) ? weekdays[0].date()+' '+monthArr[weekdays[0].month()]: isCalendarReady ? weekdays[0].date() :null}
                             </Text>
                         </View>
-                        {isCalendarReady && isSelectedDate(weekdays[0])  ? <View style={{backgroundColor:props.themeColor,height:2,width:30,bottom:-5,position:'absolute'}} /> :null}
+                        {isCalendarReady && isSelectedDate(weekdays[0])  ? <View style={{backgroundColor:'#FF739B',height:3,width:responsiveWidth(15),bottom:-5,position:'absolute'}} /> :null}
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.weekDayNumber} onPress={onDayPress.bind(this, weekdays[1], 1)}>
                         <View>
-                            <Text style={{ color: "#3B3E51" ,fontSize:responsiveFontSize(1.9),fontWeight:isCalendarReady && isSelectedDate(weekdays[1]) ?'bold':'normal'}}>
+                            <Text style={{ color: '#FFF' ,fontSize:responsiveFontSize(1.9),fontWeight:isCalendarReady && isSelectedDate(weekdays[1]) ?'bold':'normal'}}>
                             {isCalendarReady && isSelectedDate(weekdays[1]) ? weekdays[1].date()+' '+monthArr[weekdays[1].month()]: isCalendarReady? weekdays[1].date():null}
                             </Text>
                         </View>
-                        {isCalendarReady && isSelectedDate(weekdays[1])  ? <View style={{backgroundColor:props.themeColor,height:2,width:30,bottom:-5,position:'absolute'}} /> :null}
+                        {isCalendarReady && isSelectedDate(weekdays[1])  ? <View style={{backgroundColor:'#FF739B',height:3,width:responsiveWidth(15),bottom:-5,position:'absolute'}} /> :null}
                         
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.weekDayNumber} onPress={onDayPress.bind(this, weekdays[2], 2)}>
                         <View >
-                            <Text style={{ color: "#3B3E51",fontSize:responsiveFontSize(1.9),fontWeight:isCalendarReady && isSelectedDate(weekdays[2]) ?'bold':'normal' }}>
+                            <Text style={{ color: '#FFF',fontSize:responsiveFontSize(1.9),fontWeight:isCalendarReady && isSelectedDate(weekdays[2]) ?'bold':'normal' }}>
                             {isCalendarReady && isSelectedDate(weekdays[2]) ? weekdays[2].date()+' '+monthArr[weekdays[2].month()]: isCalendarReady ? weekdays[2].date():null}
                             </Text>
                         </View>
-                        {isCalendarReady && isSelectedDate(weekdays[2]) ? <View style={{backgroundColor:props.themeColor,height:2,width:30,bottom:-5,position:'absolute'}} /> :null}
+                        {isCalendarReady && isSelectedDate(weekdays[2]) ? <View style={{backgroundColor:'#FF739B',height:3,width:responsiveWidth(15),bottom:-5,position:'absolute'}} /> :null}
                         
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.weekDayNumber} onPress={onDayPress.bind(this, weekdays[3], 3)}>
                         <View>
-                            <Text style={{ color: "#3B3E51",fontSize:responsiveFontSize(1.9),fontWeight:isCalendarReady && isSelectedDate(weekdays[3]) ?'bold':'normal' }}>
+                            <Text style={{ color: '#FFF',fontSize:responsiveFontSize(1.9),fontWeight:isCalendarReady && isSelectedDate(weekdays[3]) ?'bold':'normal' }}>
                             {isCalendarReady && isSelectedDate(weekdays[3]) ? weekdays[3].date()+' '+monthArr[weekdays[3].month()]: isCalendarReady ? weekdays[3].date():null}
                             </Text>
                         </View>
-                        {isCalendarReady && isSelectedDate(weekdays[3]) ? <View style={{backgroundColor:props.themeColor,height:2,width:30,bottom:-5,position:'absolute'}} /> :null}
+                        {isCalendarReady && isSelectedDate(weekdays[3]) ? <View style={{backgroundColor:'#FF739B',height:3,width:responsiveWidth(15),bottom:-5,position:'absolute'}} /> :null}
                         
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.weekDayNumber} onPress={onDayPress.bind(this, weekdays[4], 4)}>
                         <View>
-                            <Text style={{ color: "#3B3E51",fontSize:responsiveFontSize(1.9),fontWeight:isCalendarReady && isSelectedDate(weekdays[4]) ?'bold':'normal' }}>
+                            <Text style={{ color: '#FFF',fontSize:responsiveFontSize(1.9),fontWeight:isCalendarReady && isSelectedDate(weekdays[4]) ?'bold':'normal' }}>
                             {isCalendarReady && isSelectedDate(weekdays[4]) ? weekdays[4].date()+' '+monthArr[weekdays[4].month()]: isCalendarReady ? weekdays[4].date():null}
                             </Text>
                         </View>
-                        {isCalendarReady && isSelectedDate(weekdays[4]) ? <View style={{backgroundColor:props.themeColor,height:2,width:30,bottom:-5,position:'absolute'}} /> :null}
+                        {isCalendarReady && isSelectedDate(weekdays[4]) ? <View style={{backgroundColor:'#FF739B',height:3,width:responsiveWidth(15),bottom:-5,position:'absolute'}} /> :null}
                         
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.weekDayNumber} onPress={onDayPress.bind(this, weekdays[5], 5)}>
                         <View>
-                            <Text style={{ color: "#3B3E51",fontSize:responsiveFontSize(1.9),fontWeight:isCalendarReady && isSelectedDate(weekdays[5]) ?'bold':'normal' }}>
+                            <Text style={{ color: '#FFF',fontSize:responsiveFontSize(1.9),fontWeight:isCalendarReady && isSelectedDate(weekdays[5]) ?'bold':'normal' }}>
                             {isCalendarReady && isSelectedDate(weekdays[5]) ? weekdays[5].date()+' '+monthArr[weekdays[5].month()]: isCalendarReady ? weekdays[5].date():null}
                             </Text>
                         </View>
-                        {isCalendarReady && isSelectedDate(weekdays[5]) ? <View style={{backgroundColor:props.themeColor,height:2,width:30,bottom:-5,position:'absolute'}} /> :null}
+                        {isCalendarReady && isSelectedDate(weekdays[5]) ? <View style={{backgroundColor:'#FF739B',height:3,width:responsiveWidth(15),bottom:-5,position:'absolute'}} /> :null}
                         
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.weekDayNumber} onPress={onDayPress.bind(this, weekdays[6], 6)}>
                         <View>
-                            <Text style={{ color: "#3B3E51",fontSize:responsiveFontSize(1.9),fontWeight:isCalendarReady && isSelectedDate(weekdays[6]) ?'bold':'normal' }}>
+                            <Text style={{ color: '#FFF',fontSize:responsiveFontSize(1.9),fontWeight:isCalendarReady && isSelectedDate(weekdays[6]) ?'bold':'normal' }}>
                             {isCalendarReady && isSelectedDate(weekdays[6]) ? weekdays[6].date()+' '+monthArr[weekdays[6].month()]: isCalendarReady ? weekdays[6].date():null}
                             </Text>
                         </View>
-                        {isCalendarReady && isSelectedDate(weekdays[6]) ? <View style={{backgroundColor:props.themeColor,height:2,width:30,bottom:-5,position:'absolute'}} /> :null}
+                        {isCalendarReady && isSelectedDate(weekdays[6]) ? <View style={{backgroundColor:'#FF739B',height:3,width:responsiveWidth(15),bottom:-5,position:'absolute'}} /> :null}
                         
                     </TouchableOpacity>
                 </View>
