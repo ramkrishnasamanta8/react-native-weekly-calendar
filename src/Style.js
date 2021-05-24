@@ -41,11 +41,11 @@ const styles = StyleSheet.create({
         justifyContent:'center'
     },
     weekdayLabelText: {
-        color: 'grey',
+        color: '#FFF',
         fontSize:responsiveFontSize(1.6)
     },
     selectedHeader: {
-        color: '#FFF',
+        color: '#772385',
         // height:responsiveFontSize(4.5),
         // width:responsiveFontSize(4.5),
         textAlign:'center',
